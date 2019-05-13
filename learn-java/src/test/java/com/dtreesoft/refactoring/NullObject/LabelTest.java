@@ -1,10 +1,10 @@
 package com.dtreesoft.refactoring.NullObject;
 
-import static org.junit.Assert.*;
+import org.junit.Test;
 
 public class LabelTest {
 
-    @org.junit.Test
+    @Test
     public void display() {
         Label label = Label.newNull();
         label.display();
