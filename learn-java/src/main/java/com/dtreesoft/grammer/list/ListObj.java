@@ -28,4 +28,19 @@ public class ListObj {
     public void setmString(String mString) {
         this.mString = mString;
     }
+
+    public ListObj(int mInt, long mLong, String mString) {
+        this.mInt = mInt;
+        this.mLong = mLong;
+        this.mString = mString;
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "\"mInt\":" + mInt +
+                ", \"mLong\":" + mLong +
+                ", \"mString\":\"" + mString + '\"' +
+                '}';
+    }
 }
