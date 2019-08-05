@@ -5,6 +5,8 @@ public class Coffee {
 
     public void taste() {
         System.out.println("Coffee taste");
+
+        doTaste();
     }
 
     public void temper() {
@@ -13,5 +15,9 @@ public class Coffee {
 
     protected void temperature() {
         System.out.println("Coffee temperature is normal, name = " + name);
+    }
+
+    private void doTaste() {
+        System.out.println("Coffee doTaste()");
     }
 }

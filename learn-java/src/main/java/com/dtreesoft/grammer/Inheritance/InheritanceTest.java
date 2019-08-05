@@ -3,25 +3,27 @@ package com.dtreesoft.grammer.Inheritance;
 public class InheritanceTest {
     public static void main(String[] args) {
         System.out.println("-----------------------------------");
-        System.out.println("----------- americano test --------");
+        System.out.println("----------- coffee test -----------");
 
-        Coffee americano = new Americano();
-        System.out.println("----- americano = " + americano.name);
+        Coffee coffee = new Americano();
+        System.out.println("---- coffee = " + coffee.name);
+        coffee.taste();
+
+        Americano americano = (Americano) coffee;
+        System.out.println("---- americano = " + americano.name);
         americano.taste();
-
-        Americano tempAme = (Americano) americano;
-        System.out.println("----- tempAme = " + tempAme.name);
-        tempAme.taste();
 
         System.out.println("-----------------------------------");
         System.out.println("----------- latte test ------------");
 
         Coffee latte = new Latte();
-        System.out.println("----- latte = " + latte.name);
+        System.out.println("---- latte = " + latte.name);
         latte.taste();
 
         Latte tempLatte = (Latte) latte;
-        System.out.println("----- tempLatte = " + tempLatte.name);
+        System.out.println("---- tempLatte = " + tempLatte.name);
         tempLatte.taste();
+
+        System.out.println();
     }
 }
