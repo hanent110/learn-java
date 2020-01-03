@@ -1,4 +1,4 @@
-package com.dtreesoft.grammer.moduler;
+package com.dtreesoft.grammer.calculate;
 
 public class ModulerTest {
     public static void main(String[] args) {
