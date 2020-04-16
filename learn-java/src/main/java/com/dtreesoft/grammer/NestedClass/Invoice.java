@@ -27,6 +27,10 @@ public class Invoice {
             return quantity * unitPrice;
         }
 
+        public void showInfo() {
+            System.out.println("description = " + description + ", quantity = " + quantity);
+        }
+
         public void showItems() {
 
             // static Nested Class 의 경우 외부 클래스에 접근할 수 없다.
