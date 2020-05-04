@@ -5,6 +5,7 @@ public class ExceptionTest {
         ExceptionTest exceptionTest = new ExceptionTest();
         exceptionTest.finallyTest();
         exceptionTest.finallyJustReturnTest();
+        exceptionTest.finallyObjectReturnTest();
         exceptionTest.finallyLocalVariableReturnTest();
     }
 
@@ -21,7 +22,14 @@ public class ExceptionTest {
         int retValue = newCar.finallyJustReturnTest();
 
         System.out.println("return value = " + retValue);
-        System.out.println("------------------------ finallyReturnTest() end");
+        System.out.println("------------------------ finallyJustReturnTest() end");
+    }
+
+    public void finallyObjectReturnTest() {
+        Car newCar = new Car();
+        Board board = newCar.finallyObjectReturnTest();
+        System.out.println("board = " + board);
+        System.out.println("------------------------ finallyObjectReturnTest() end");
     }
 
     public void finallyLocalVariableReturnTest() {
