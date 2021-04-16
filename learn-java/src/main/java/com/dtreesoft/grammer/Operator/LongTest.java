@@ -1,6 +1,7 @@
 package com.dtreesoft.grammer.Operator;
 
 public class LongTest {
+
     public void runTest() {
         Long longVal_10_a = 10L;
         Long longVal_10_b = 10L;
