@@ -9,10 +9,30 @@ public class ListTest {
     public static void main(String[] args) {
         ListTest test = new ListTest();
 
+        test.containsTest();
         test.nullListForIterateTest();
         test.iteratorRemoveTest();
         test.foreachRemoveTest();
         test.copyAndRemoveTest();
+    }
+
+    /**
+     *  contains 의 equals 검사 테스트
+     *  Boxing 형태와 raw 형태의 비교 테스트
+     */
+    private void containsTest() {
+        List<Integer> objs = new ArrayList<>();
+        objs.add(new Integer(1));
+        objs.add(new Integer(10));
+        objs.add(new Integer(1978));
+        objs.add(new Integer(9));
+        objs.add(new Integer(14));
+
+        if (objs.contains(9)) {
+            System.out.println("containsTest, has 9");
+        } else {
+            System.out.println("containsTest, not has 9");
+        }
     }
 
     private void nullListForIterateTest() {
