@@ -4,11 +4,37 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class NullObjectCasting {
-    Map<String, Item> items = new HashMap<String, Item>();
+    Map<String, Item> items = new HashMap<>();
 
     public static void main(String[] args) {
         NullObjectCasting test = new NullObjectCasting();
         test.runTest();
+        test.castingNullInteger();
+    }
+
+    private void castingNullInteger() {
+        Map<String, Object> objectMap = new HashMap<>();
+        objectMap.put("ItemA", 100);
+
+        Integer itemA = (Integer) objectMap.get("ItemA");
+        System.out.println("itemA = " + itemA);
+
+        /**
+         *  Null Object 캐스팅은 Exception 을 던지지 않는다.
+         *  그냥 Null object 로 대입될 뿐이다.
+         */
+        Integer itemB = (Integer) objectMap.get("ItemB");
+        System.out.println("itemB = " + itemB);
+
+        /**
+         *  primitive type 으로 캐스팅 시에는 null object 일 경우 Null Exception 발생.
+         */
+        try {
+            Integer itemC = (int) objectMap.get("ItemC");
+            System.out.println("itemC = " + itemC);
+        } catch (Exception e) {
+            System.out.println("e = " + e);
+        }
     }
 
     private void runTest() {
