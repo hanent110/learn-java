@@ -1,10 +1,7 @@
 package com.dtreesoft.grammer.date;
 
 import java.sql.Timestamp;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.ZoneOffset;
+import java.time.*;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
@@ -16,6 +13,7 @@ public class LocalDateTimeTest {
         localDateTimeTest.minusTest();
         localDateTimeTest.localDateTest();
         localDateTimeTest.epochTest();
+        localDateTimeTest.diffDay();
     }
 
     private void mainTest() {
@@ -77,6 +75,19 @@ public class LocalDateTimeTest {
 
         long instantNow = Instant.now().toEpochMilli();
         System.out.println("instantNow = " + instantNow);
+    }
+
+    private void diffDay() {
+        LocalDateTime before = LocalDateTime.of(2021, 9, 2, 23, 59, 59);
+        LocalDateTime after = LocalDateTime.of(2021, 9, 3, 0, 1, 1);
+
+        LocalDate beforeDate = before.toLocalDate();
+        LocalDate afterDate = after.toLocalDate();
+
+        Period between = Period.between(beforeDate, afterDate);
+        int days = between.getDays();
+
+        System.out.println("days = " + days);
     }
 
 }

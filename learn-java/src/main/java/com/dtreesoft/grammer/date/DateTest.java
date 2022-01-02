@@ -8,9 +8,45 @@ import java.util.Date;
 public class DateTest {
     public static void main(String[] args) {
         DateTest dateTest = new DateTest();
+        dateTest.currentTimeTest();
+        dateTest.currentTimePerformanceTest();
 
         dateTest.finallyTest();
         dateTest.calcDate();
+
+        dateTest.currentTimeTest();
+        dateTest.currentTimePerformanceTest();
+    }
+
+    private void currentTimePerformanceTest() {
+        long start;
+        long end;
+        start = System.currentTimeMillis();
+        for (int i = 0; i < 100000000; i++) {
+            System.currentTimeMillis();
+        }
+        end = System.currentTimeMillis();
+        System.out.println("System.currentTimeMillis() :: " + (end - start));
+        start = System.currentTimeMillis();
+        for (int i = 0; i < 100000000; i++) {
+            new Date();
+        }
+        end = System.currentTimeMillis();
+        System.out.println("new Date() :: " + (end - start));
+        start = System.currentTimeMillis();
+        for (int i = 0; i < 100000000; i++) {
+            Calendar.getInstance().getTime();
+        }
+        end = System.currentTimeMillis();
+        System.out.println("Calendar.getInstance().getTime() :: " + (end - start));
+    }
+
+    private void currentTimeTest() {
+        long time = Calendar.getInstance().getTime().getTime();
+        long c = System.currentTimeMillis();
+
+        long diff = c - time;
+        System.out.println("currentTimeTest, diff = " + diff);
     }
 
     public void finallyTest() {

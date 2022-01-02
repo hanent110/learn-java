@@ -11,6 +11,9 @@ public class OperatorTest {
 
         DoubleTest doubleTest = new DoubleTest();
         doubleTest.runTest();
+
+        IfTest ifTest = new IfTest();
+        ifTest.runTest();
     }
 
 }
