@@ -11,6 +11,7 @@ public class AnnotationTest {
     private void mainTest() {
         String name = null;
         callNotNullMethod(name);
+        callNotNullMethod(null);
     }
 
     private void callNotNullMethod(@NotNull String name) {
